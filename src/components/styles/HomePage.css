@@ -1,0 +1,227 @@
+/* src/components/HomePage.css */
+
+:root {
+    --background-color-light: #f5f5f5; /* Цвет фона в светлой теме */
+    --background-color-dark: #333; /* Цвет фона в темной теме */
+    --text-color-light: #333; /* Цвет текста в светлой теме */
+    --text-color-dark: #f5f5f5; /* Цвет текста в темной теме */
+}
+
+.light {
+    --background-color: var(--background-color-light);
+    --text-color: var(--text-color-light);
+}
+
+.dark {
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-dark);
+}
+
+/* Стили для шапки */
+.App {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Стили для кнопки переключения темы */
+.navbar .btn-link {
+    color: var(--text-color);
+}
+
+/* Стили для навигационной панели */
+.navbar a.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Стили для главной части */
+.main-content {
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--text-color);
+    padding: 2rem;
+}
+
+
+/* Стили для аватара и имени пользователя */
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #3498db; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    border: 2px solid #fff; /* Цвет обводки */
+    border-radius: 50%; /* Для создания круглой формы */
+    margin-right: 10px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    --background: #28096b;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: .5s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px #fff000;
+    background: var(--background);
+    transition: .5s;
+}
+
+input:checked + .slider {
+    background-color: #522ba7;
+}
+
+input:checked + .slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #fff000;
+}
+.btn {
+    --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+    --border-width: .125em;
+    --curve-size: .5em;
+    --blur: 30px;
+    --bg: #080312;
+    --color: #afffff;
+    color: var(--color);
+    /* use position: relative; so that BG is only for .btn */
+    position: relative;
+    isolation: isolate;
+    display: inline-grid;
+    place-content: center;
+    padding: .5em 1.5em;
+    font-size: 17px;
+    border: 0;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .6);
+    clip-path: polygon(
+        /* Top-left */
+            0% var(--curve-size),
+
+            var(--curve-size) 0,
+                /* top-right */
+            100% 0,
+            100% calc(100% - var(--curve-size)),
+
+                /* bottom-right 1 */
+            calc(100% - var(--curve-size)) 100%,
+                /* bottom-right 2 */
+            0 100%);
+    transition: color 250ms;
+}
+
+.btn::after,
+.btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+.btn::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 5s ease infinite;
+    z-index: -2;
+}
+
+@keyframes move-bg7234 {
+    0% {
+        background-position: 31% 0%
+    }
+
+    50% {
+        background-position: 70% 100%
+    }
+
+    100% {
+        background-position: 31% 0%
+    }
+}
+
+.btn::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+        /* Top-left */
+            var(--border-width)
+            calc(var(--curve-size) + var(--border-width) * .5),
+
+            calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+
+                /* top-right */
+            calc(100% - var(--border-width))
+            var(--border-width),
+
+            calc(100% - var(--border-width))
+            calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+                /* bottom-right 1 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+                /* bottom-right 2 */
+            var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms;
+}
+
+.btn:where(:hover, :focus)::after {
+    clip-path: polygon(
+        /* Top-left */
+            calc(100% - var(--border-width))
+
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+
+            calc(100% - var(--border-width))
+
+            var(--border-width),
+
+                /* top-right */
+            calc(100% - var(--border-width))
+
+            var(--border-width),
+
+            calc(100% - var(--border-width))
+
+            calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+                /* bottom-right 1 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * .5))
+            calc(100% - var(--border-width)),
+
+                /* bottom-right 2 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+            calc(100% - var(--border-width)));
+    transition: 200ms;
+}
+
+.btn:where(:hover, :focus) {
+    color: #fff;
+}
+

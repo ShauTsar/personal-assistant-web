@@ -1,0 +1,124 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.dark {
+    background-color: rgb(4, 52, 73);
+    color: #fff;
+    font-family: Arial, sans-serif; /* Изменение шрифта */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputbox {
+    position: relative;
+    width: 196px;
+    margin-bottom: 20px;
+}
+
+.inputbox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+    font-family: Arial, sans-serif; /* Изменение шрифта */
+}
+
+.inputbox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    color: #8f8f8f;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    pointer-events: none;
+    font-family: Arial, sans-serif; /* Изменение шрифта */
+}
+
+.inputbox input:valid ~span,
+.inputbox input:focus ~span {
+    color: #45f3ff;
+    transform: translateX(-10px) translateY(-34px);
+    font-size: 0.75em;
+    font-family: Arial, sans-serif; /* Изменение шрифта */
+}
+
+.inputbox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #45f3ff;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+}
+
+.inputbox input:valid ~i,
+.inputbox input:focus ~i {
+    height: 44px;
+}
+
+button {
+    background-color: #45f3ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    font-family: Arial, sans-serif; /* Изменение шрифта */
+}
+
+.login-options {
+    text-align: center;
+    margin-top: 20px;
+    font-family: Arial, sans-serif; /* Изменение шрифта */
+}
+
+.login-options p {
+    font-size: 0.85em;
+    margin: 5px 0;
+}
+
+.auth-icon {
+    display: inline-block;
+    background: #fff;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    color: #45f3ff;
+}
+
+.auth-icon.google {
+    background-color: #4285F4;
+    color: #fff;
+}
+
+.auth-icon.vk {
+    background-color: #4C75A3;
+    color: #fff;
+}
+
+.auth-icon.telegram {
+    background-color: #0088cc;
+    color: #fff;
+}
