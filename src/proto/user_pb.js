@@ -21,8 +21,6 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
-goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.user.ChangeAvatarRequest', null, global);
 goog.exportSymbol('proto.user.ChangeAvatarResponse', null, global);
 goog.exportSymbol('proto.user.ChangeEmailRequest', null, global);
@@ -2523,7 +2521,7 @@ proto.user.RegisterRequest.toObject = function(includeInstance, msg) {
     password: jspb.Message.getFieldWithDefault(msg, 2, ""),
     email: jspb.Message.getFieldWithDefault(msg, 3, ""),
     phone: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    timezone: (f = msg.getTimezone()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
+    timezone: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -2577,8 +2575,7 @@ proto.user.RegisterRequest.deserializeBinaryFromReader = function(msg, reader) {
       msg.setPhone(value);
       break;
     case 5:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setTimezone(value);
       break;
     default:
@@ -2639,11 +2636,10 @@ proto.user.RegisterRequest.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getTimezone();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       5,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -2722,39 +2718,20 @@ proto.user.RegisterRequest.prototype.setPhone = function(value) {
 
 
 /**
- * optional google.protobuf.Timestamp timezone = 5;
- * @return {?proto.google.protobuf.Timestamp}
+ * optional string timezone = 5;
+ * @return {string}
  */
 proto.user.RegisterRequest.prototype.getTimezone = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @param {string} value
  * @return {!proto.user.RegisterRequest} returns this
-*/
+ */
 proto.user.RegisterRequest.prototype.setTimezone = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.user.RegisterRequest} returns this
- */
-proto.user.RegisterRequest.prototype.clearTimezone = function() {
-  return this.setTimezone(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.user.RegisterRequest.prototype.hasTimezone = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

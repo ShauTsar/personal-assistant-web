@@ -1,0 +1,42 @@
+/* FinancesPage.css */
+/* Стили для страницы финансов */
+.finances-page {
+    padding: 20px;
+}
+
+.budget {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.budget p {
+    margin-right: 10px;
+}
+
+.add-transaction {
+    margin-bottom: 20px;
+}
+
+.add-transaction h2 {
+    margin-bottom: 10px;
+}
+
+.add-transaction input {
+    margin-right: 10px;
+}
+
+.transaction-list h2 {
+    margin-bottom: 10px;
+}
+
+.transaction-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.transaction-list li {
+    margin: 5px 0;
+}
+
+/* Другие стили страницы финансов */

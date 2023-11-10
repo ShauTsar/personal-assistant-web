@@ -53,8 +53,6 @@
     border-radius: 50%; /* Для создания круглой формы */
     margin-right: 10px;
 }
-
-/* The switch - the box around the slider */
 .switch {
     font-size: 17px;
     position: relative;
@@ -223,5 +221,9 @@ input:checked + .slider:before {
 
 .btn:where(:hover, :focus) {
     color: #fff;
+}
+.brand-link {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: inherit; /* Наследуем цвет */
 }
 
