@@ -1,0 +1,73 @@
+/* FinancialPage.css */
+.financial-app {
+    background-color: rgba(76, 76, 76, 0);
+    color: #333;
+}
+
+.financial-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.financial-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.financial-section {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.financial-chart {
+    flex: 1;
+    padding: 1rem;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-right: 1rem;
+    /* Добавьте стили для вашей диаграммы */
+}
+
+.financial-transactions {
+    flex: 1;
+    padding: 1rem;
+    background-color: #1b082d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    /* Добавьте стили для отображения транзакций */
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.transaction-type {
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.income {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.expense {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.transaction-amount {
+    margin-left: 1rem;
+    color: #fff;
+}
+
+.transaction-date {
+    color: #ffffff;
+}

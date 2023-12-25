@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/LoginPage.css';
-import { RegisterRequest } from '../../proto/user_pb.js';
-import { UserServiceClient } from '../../proto/user_grpc_web_pb.js';
-
-// Создайте список часовых поясов с описанием
+import { RegisterRequest } from '../../proto/gen/user_pb.js';
+import { UserServiceClient } from '../../proto/gen/user_grpc_web_pb.js';
 const timezones = [
     { id: 'Etc/UTC', label: 'UTC±0 (London, Dublin, Lisbon)' },
     { id: 'Etc/GMT-1', label: 'UTC±1 (Berlin, Paris, Rome)' },
@@ -19,7 +17,6 @@ const timezones = [
     { id: 'Etc/GMT-10', label: 'UTC±10 (Sydney, Melbourne, Guam)' },
     { id: 'Etc/GMT-11', label: 'UTC±11 (Honiara, Vanuatu, Noumea)' },
     { id: 'Etc/GMT-12', label: 'UTC±12 (Suva, Funafuti, Tarawa)' },
-    // Другие часовые пояса и описания
 ];
 
 function RegistrationPage() {
@@ -29,7 +26,7 @@ function RegistrationPage() {
         confirmPassword: '',
         email: '',
         phone: '',
-        timezone: 'Etc/GMT-3', // Установите часовой пояс по умолчанию
+        timezone: 'Etc/GMT-3',
     });
 
     const [registrationStatus, setRegistrationStatus] = useState(null);
@@ -47,13 +44,9 @@ function RegistrationPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (formData.password !== formData.confirmPassword) {
-            // Если пароли не совпадают, устанавливаем флаг ошибки
             setPasswordsMatch(false);
         } else {
-            // Сброс флага ошибки при совпадении паролей
             setPasswordsMatch(true);
-
-            // Ваш код обработки отправки формы здесь, включая вызов функции для регистрации пользователя
             handleRegister();
         }
     };

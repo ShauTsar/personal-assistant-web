@@ -21,6 +21,7 @@ function FinancesPage() {
         setNewTransaction({ description: '', amount: 0, date: new Date() });
     };
 
+
     return (
         <div className={`App ${darkMode ? 'dark' : 'light'}`}>
             <Header />

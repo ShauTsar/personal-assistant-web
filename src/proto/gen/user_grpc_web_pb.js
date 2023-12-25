@@ -501,5 +501,66 @@ proto.user.UserServicePromiseClient.prototype.register =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.user.LoginRequest,
+ *   !proto.user.LoginResponse>}
+ */
+const methodDescriptor_UserService_Login = new grpc.web.MethodDescriptor(
+  '/user.UserService/Login',
+  grpc.web.MethodType.UNARY,
+  proto.user.LoginRequest,
+  proto.user.LoginResponse,
+  /**
+   * @param {!proto.user.LoginRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.user.LoginResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.user.LoginRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.user.LoginResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.user.LoginResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.user.UserServiceClient.prototype.login =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/user.UserService/Login',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_Login,
+      callback);
+};
+
+
+/**
+ * @param {!proto.user.LoginRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.user.LoginResponse>}
+ *     Promise that resolves to the response
+ */
+proto.user.UserServicePromiseClient.prototype.login =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/user.UserService/Login',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_Login);
+};
+
+
 module.exports = proto.user;
 

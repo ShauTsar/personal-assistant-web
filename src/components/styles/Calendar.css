@@ -1,53 +1,102 @@
-/* dark-calendar.css */
-/* Настройки цвета фона и текста */
-.rbc-calendar {
-    background-color: #222; /* Цвет фона */
-    color: #fff; /* Цвет текста */
+/* Calendar.css */
+
+.container {
+    text-align: center;
 }
 
-/* Настройки цвета событий */
-.rbc-event {
-    background-color: #007ACC; /* Цвет фона события */
-    color: #fff; /* Цвет текста события */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
-/* Другие стили вашей темной темы */
-/* Настройки цвета фона и текста */
-.rbc-calendar {
-    background-color: #f7f7f7; /* Цвет фона */
-    color: #333; /* Цвет текста */
+/* Общие стили для календаря */
+.react-calendar {
+    width: auto;
+    height: auto;
+    background: rgba(76, 76, 76, 0);
+    box-shadow: 0px 0px 10px rgb(28, 42, 134);
+    border: none;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+    font-size: 1.2em;
+}
+.calendar-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Настройки цвета событий */
-.rbc-event {
-    background-color: #007ACC; /* Цвет фона события */
-    color: #fff; /* Цвет текста события */
+
+.react-calendar__tile {
+    padding: 0.75em;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Настройки заголовка месяца */
-.rbc-month-header {
-    background-color: #007ACC; /* Цвет фона заголовка месяца */
-    color: #fff; /* Цвет текста заголовка месяца */
+/* Активный день */
+.react-calendar__tile--active {
+    background-color: #61dafb;
+    color: #1c1c1c;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Настройки ячеек дней */
-.rbc-day-bg {
-    background-color: #fff; /* Цвет фона ячейки дня */
+/* Текущий день */
+.react-calendar__tile--now {
+    background-color: #61dafb;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Настройки кнопок "Сегодня" и "Следующий месяц" */
-.rbc-btn {
-    background-color: #007ACC; /* Цвет фона кнопок */
-    color: #fff; /* Цвет текста кнопок */
+/* День с активным событием */
+.react-calendar__tile--hasActive {
+    background-color: #61dafb;
 }
 
-/* Настройки кнопок "Сегодня" и "Следующий месяц" при наведении */
-.rbc-btn:hover {
-    background-color: #005e94; /* Цвет фона кнопок при наведении */
+/* Дни соседнего месяца */
+.react-calendar__month-view__days__day--neighboringMonth {
+    color: #666;
 }
 
-/* Настройки фона текущей даты */
-.rbc-today {
-    background-color: #24debd; /* Цвет фона текущей даты */
+/* Light Theme */
+.light .react-calendar {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+/* Тема для активного дня в светлой теме */
+.light .react-calendar__tile--active {
+    background-color: #61dafb;
+    color: #1c1c1c;
+    transform: scale(1.05);
+}
+
+/* Тема для текущего дня в светлой теме */
+.light .react-calendar__tile--now {
+    background-color: #61dafb;
+}
+
+/* Dark Theme */
+.dark .react-calendar {
+    background: #2c2c2c;
+    box-shadow: 0 0 10px rgb(28, 42, 134);
+    color: #fff;
+}
+
+/* Тема для активного дня в темной теме */
+.dark .react-calendar__tile--active {
+    background-color: #ffd323;
+    color: #1c1c1c;
+    transform: scale(1.05);
+}
+
+/* Тема для текущего дня в темной теме */
+.dark .react-calendar__tile--now {
+    background-color: #61dafb;
 }
 
