@@ -1,41 +1,107 @@
 /* Calendar.css */
 
+/* Импорт нового шрифта */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Добавление эффекта тени при наведении на событие */
+.events-list li {
+    transition: transform 0.3s ease;
+}
+
+.events-list li:hover {
+    transform: scale(1.05);
+}
+
+/* Добавление эффекта тени при наведении на контейнер календаря */
+.calendar-container {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.calendar-container:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Улучшенный макет */
 .container {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+.events-list-container {
+    background: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(28, 42, 134);
+    color: #fff; /* Изменен цвет текста на светлый */
+    width: 30%;
 }
 
-/* Общие стили для календаря */
+/* Стили для списка событий */
+.events-list {
+    width: 100%;
+}
+
+.events-list h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #61dafb; /* Цвет заголовка */
+}
+
+.events-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.events-list li {
+    margin-bottom: 8px;
+    color: #fff; /* Цвет текста события изменен на светлый */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.events-list li:hover {
+    color: #61dafb;
+}
+
+/* Улучшенный контейнер календаря */
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('/public/842659.jpg') center/cover; /* Замените 'your-background-image.jpg' на ваше изображение */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    color: #fff; /* Изменен цвет текста на светлый */
+    width: 65%;
+}
+
+/* Стили для компонента календаря */
 .react-calendar {
     width: auto;
     height: auto;
     background: rgba(76, 76, 76, 0);
     box-shadow: 0px 0px 10px rgb(28, 42, 134);
     border: none;
-    color: #fff;
+    color: #333; /* Изменен цвет текста на темный */
     margin: 0;
     padding: 20px;
     transition: all 0.3s ease-in-out;
     font-size: 1.2em;
-}
-.calendar-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    border-radius: 10px;
 }
 
-
-.react-calendar__tile {
-    padding: 0.75em;
-    border: none;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+/* Добавьте анимацию для плавного изменения цвета при наведении */
+.react-calendar__tile:hover {
+    background-color: #61dafb;
+    color: #1c1c1c;
 }
 
 /* Активный день */
@@ -85,12 +151,12 @@ h1 {
 .dark .react-calendar {
     background: #2c2c2c;
     box-shadow: 0 0 10px rgb(28, 42, 134);
-    color: #fff;
+    color: #333;
 }
 
 /* Тема для активного дня в темной теме */
 .dark .react-calendar__tile--active {
-    background-color: #ffd323;
+    background-color: #1cbbcb;
     color: #1c1c1c;
     transform: scale(1.05);
 }
@@ -100,3 +166,135 @@ h1 {
     background-color: #61dafb;
 }
 
+/* Стили для кнопки добавления события */
+.add-event-btn {
+    background-color: #61dafb;
+    color: #333; /* Изменен цвет текста на темный */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.add-event-btn:hover {
+    background-color: #27498c;
+}
+
+/* Нижняя часть страницы (может быть у вас есть другой класс для этой части) */
+.footer {
+    background-color: #0c0b0b; /* Светлый фон */
+    padding: 20px;
+    text-align: center;
+    color: #333; /* Цвет текста */
+}
+
+/* Светлая тема для контейнера списка событий */
+.light .events-list-container {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.light .events-list h2 {
+    color: #61dafb;
+}
+
+.light .events-list li {
+    color: #333;
+}
+
+/* Стили для темной темы */
+.dark .events-list-container {
+    background: #2c2c2c;
+    color: #fff;
+}
+
+.dark .events-list h2 {
+    color: #1f7985;
+}
+
+.dark .events-list li {
+    color: #fff;
+}
+
+/* Стили для завершенных и незавершенных событий */
+.light .events-list li.completed {
+    color: #4caf50; /* Зеленый цвет для выполненных событий */
+}
+
+.light .events-list li.not-completed {
+    color: #ff5252; /* Красный цвет для невыполненных событий */
+}
+
+.dark .events-list li.completed {
+    color: #4caf50; /* Зеленый цвет для выполненных событий */
+}
+
+.dark .events-list li.not-completed {
+    color: #ff5252; /* Красный цвет для невыполненных событий */
+}
+
+/* Медиа-запросы для адаптивности */
+@media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .events-list-container {
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgb(28, 42, 134);
+        align-items: center;
+        width: 100%;
+    }
+
+    .events-list h2 {
+        font-size: 1.2em;
+        margin-bottom: 8px;
+    }
+
+    .events-list li {
+        margin-bottom: 6px;
+    }
+
+    .calendar-container {
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        align-items: center;
+        width: 100%;
+    }
+
+    .react-calendar {
+        padding: 15px;
+        font-size: 1em;
+        border-radius: 8px;
+    }
+
+    .add-event-btn {
+        padding: 8px 12px;
+        border-radius: 5px;
+    }
+
+    .footer {
+        padding: 15px;
+    }
+}
+
+/* Стили для информации о событии */
+.event-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.event-date {
+    font-weight: 600;
+    color: #61dafb;
+}
+
+.event-title {
+    flex-grow: 1;
+    margin-left: 10px;
+}

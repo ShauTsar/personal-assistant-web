@@ -34,7 +34,7 @@ function Header() {
             <Navbar bg="transparent" variant={darkMode ? 'light' : 'dark'} expand="lg">
                 <Container>
                     <Link to="/" className="brand-link">
-                        <Navbar.Brand className="text-center">DailyEase</Navbar.Brand>
+                        <Navbar.Brand className="text-center fw-bold">DailyEase</Navbar.Brand>
                     </Link>
                     <Nav className="mx-auto">
                         <Nav.Link href="/calendar">Календарь</Nav.Link>

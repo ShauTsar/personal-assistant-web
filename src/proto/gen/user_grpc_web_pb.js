@@ -562,5 +562,737 @@ proto.user.UserServicePromiseClient.prototype.login =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.user.UpdateTelegramUserIDRequest,
+ *   !proto.user.UpdateTelegramUserIDResponse>}
+ */
+const methodDescriptor_UserService_UpdateTelegramUserID = new grpc.web.MethodDescriptor(
+  '/user.UserService/UpdateTelegramUserID',
+  grpc.web.MethodType.UNARY,
+  proto.user.UpdateTelegramUserIDRequest,
+  proto.user.UpdateTelegramUserIDResponse,
+  /**
+   * @param {!proto.user.UpdateTelegramUserIDRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.user.UpdateTelegramUserIDResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.user.UpdateTelegramUserIDRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.user.UpdateTelegramUserIDResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.user.UpdateTelegramUserIDResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.user.UserServiceClient.prototype.updateTelegramUserID =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/user.UserService/UpdateTelegramUserID',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateTelegramUserID,
+      callback);
+};
+
+
+/**
+ * @param {!proto.user.UpdateTelegramUserIDRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.user.UpdateTelegramUserIDResponse>}
+ *     Promise that resolves to the response
+ */
+proto.user.UserServicePromiseClient.prototype.updateTelegramUserID =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/user.UserService/UpdateTelegramUserID',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateTelegramUserID);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.user.AddEventDataRequest,
+ *   !proto.user.AddEventDataResponse>}
+ */
+const methodDescriptor_UserService_AddEventData = new grpc.web.MethodDescriptor(
+  '/user.UserService/AddEventData',
+  grpc.web.MethodType.UNARY,
+  proto.user.AddEventDataRequest,
+  proto.user.AddEventDataResponse,
+  /**
+   * @param {!proto.user.AddEventDataRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.user.AddEventDataResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.user.AddEventDataRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.user.AddEventDataResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.user.AddEventDataResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.user.UserServiceClient.prototype.addEventData =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/user.UserService/AddEventData',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_AddEventData,
+      callback);
+};
+
+
+/**
+ * @param {!proto.user.AddEventDataRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.user.AddEventDataResponse>}
+ *     Promise that resolves to the response
+ */
+proto.user.UserServicePromiseClient.prototype.addEventData =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/user.UserService/AddEventData',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_AddEventData);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.user.GetAllEventsRequest,
+ *   !proto.user.GetAllEventsResponse>}
+ */
+const methodDescriptor_UserService_GetAllEvents = new grpc.web.MethodDescriptor(
+  '/user.UserService/GetAllEvents',
+  grpc.web.MethodType.UNARY,
+  proto.user.GetAllEventsRequest,
+  proto.user.GetAllEventsResponse,
+  /**
+   * @param {!proto.user.GetAllEventsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.user.GetAllEventsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.user.GetAllEventsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.user.GetAllEventsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.user.GetAllEventsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.user.UserServiceClient.prototype.getAllEvents =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/user.UserService/GetAllEvents',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetAllEvents,
+      callback);
+};
+
+
+/**
+ * @param {!proto.user.GetAllEventsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.user.GetAllEventsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.user.UserServicePromiseClient.prototype.getAllEvents =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/user.UserService/GetAllEvents',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetAllEvents);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.user.FinishEventRequest,
+ *   !proto.user.FinishEventResponse>}
+ */
+const methodDescriptor_UserService_FinishEvent = new grpc.web.MethodDescriptor(
+  '/user.UserService/FinishEvent',
+  grpc.web.MethodType.UNARY,
+  proto.user.FinishEventRequest,
+  proto.user.FinishEventResponse,
+  /**
+   * @param {!proto.user.FinishEventRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.user.FinishEventResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.user.FinishEventRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.user.FinishEventResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.user.FinishEventResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.user.UserServiceClient.prototype.finishEvent =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/user.UserService/FinishEvent',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_FinishEvent,
+      callback);
+};
+
+
+/**
+ * @param {!proto.user.FinishEventRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.user.FinishEventResponse>}
+ *     Promise that resolves to the response
+ */
+proto.user.UserServicePromiseClient.prototype.finishEvent =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/user.UserService/FinishEvent',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_FinishEvent);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.user.UpdateUserSettingsRequest,
+ *   !proto.user.UpdateUserSettingsResponse>}
+ */
+const methodDescriptor_UserService_UpdateUserSettings = new grpc.web.MethodDescriptor(
+  '/user.UserService/UpdateUserSettings',
+  grpc.web.MethodType.UNARY,
+  proto.user.UpdateUserSettingsRequest,
+  proto.user.UpdateUserSettingsResponse,
+  /**
+   * @param {!proto.user.UpdateUserSettingsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.user.UpdateUserSettingsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.user.UpdateUserSettingsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.user.UpdateUserSettingsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.user.UpdateUserSettingsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.user.UserServiceClient.prototype.updateUserSettings =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/user.UserService/UpdateUserSettings',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateUserSettings,
+      callback);
+};
+
+
+/**
+ * @param {!proto.user.UpdateUserSettingsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.user.UpdateUserSettingsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.user.UserServicePromiseClient.prototype.updateUserSettings =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/user.UserService/UpdateUserSettings',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateUserSettings);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.user.UserSettingsRequest,
+ *   !proto.user.UserSettingsResponse>}
+ */
+const methodDescriptor_UserService_GetUserSettings = new grpc.web.MethodDescriptor(
+  '/user.UserService/GetUserSettings',
+  grpc.web.MethodType.UNARY,
+  proto.user.UserSettingsRequest,
+  proto.user.UserSettingsResponse,
+  /**
+   * @param {!proto.user.UserSettingsRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.user.UserSettingsResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.user.UserSettingsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.user.UserSettingsResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.user.UserSettingsResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.user.UserServiceClient.prototype.getUserSettings =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/user.UserService/GetUserSettings',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetUserSettings,
+      callback);
+};
+
+
+/**
+ * @param {!proto.user.UserSettingsRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.user.UserSettingsResponse>}
+ *     Promise that resolves to the response
+ */
+proto.user.UserServicePromiseClient.prototype.getUserSettings =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/user.UserService/GetUserSettings',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetUserSettings);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.user.GetFinancesRequest,
+ *   !proto.user.GetFinancesResponse>}
+ */
+const methodDescriptor_UserService_GetFinances = new grpc.web.MethodDescriptor(
+  '/user.UserService/GetFinances',
+  grpc.web.MethodType.UNARY,
+  proto.user.GetFinancesRequest,
+  proto.user.GetFinancesResponse,
+  /**
+   * @param {!proto.user.GetFinancesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.user.GetFinancesResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.user.GetFinancesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.user.GetFinancesResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.user.GetFinancesResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.user.UserServiceClient.prototype.getFinances =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/user.UserService/GetFinances',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetFinances,
+      callback);
+};
+
+
+/**
+ * @param {!proto.user.GetFinancesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.user.GetFinancesResponse>}
+ *     Promise that resolves to the response
+ */
+proto.user.UserServicePromiseClient.prototype.getFinances =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/user.UserService/GetFinances',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetFinances);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.user.GetCategoriesRequest,
+ *   !proto.user.GetCategoriesResponse>}
+ */
+const methodDescriptor_UserService_GetCategories = new grpc.web.MethodDescriptor(
+  '/user.UserService/GetCategories',
+  grpc.web.MethodType.UNARY,
+  proto.user.GetCategoriesRequest,
+  proto.user.GetCategoriesResponse,
+  /**
+   * @param {!proto.user.GetCategoriesRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.user.GetCategoriesResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.user.GetCategoriesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.user.GetCategoriesResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.user.GetCategoriesResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.user.UserServiceClient.prototype.getCategories =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/user.UserService/GetCategories',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetCategories,
+      callback);
+};
+
+
+/**
+ * @param {!proto.user.GetCategoriesRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.user.GetCategoriesResponse>}
+ *     Promise that resolves to the response
+ */
+proto.user.UserServicePromiseClient.prototype.getCategories =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/user.UserService/GetCategories',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetCategories);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.user.AddFinanceRequest,
+ *   !proto.user.AddFinanceResponse>}
+ */
+const methodDescriptor_UserService_AddFinance = new grpc.web.MethodDescriptor(
+  '/user.UserService/AddFinance',
+  grpc.web.MethodType.UNARY,
+  proto.user.AddFinanceRequest,
+  proto.user.AddFinanceResponse,
+  /**
+   * @param {!proto.user.AddFinanceRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.user.AddFinanceResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.user.AddFinanceRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.user.AddFinanceResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.user.AddFinanceResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.user.UserServiceClient.prototype.addFinance =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/user.UserService/AddFinance',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_AddFinance,
+      callback);
+};
+
+
+/**
+ * @param {!proto.user.AddFinanceRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.user.AddFinanceResponse>}
+ *     Promise that resolves to the response
+ */
+proto.user.UserServicePromiseClient.prototype.addFinance =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/user.UserService/AddFinance',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_AddFinance);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.user.DeleteFinanceRequest,
+ *   !proto.user.DeleteFinanceResponse>}
+ */
+const methodDescriptor_UserService_DeleteFinance = new grpc.web.MethodDescriptor(
+  '/user.UserService/DeleteFinance',
+  grpc.web.MethodType.UNARY,
+  proto.user.DeleteFinanceRequest,
+  proto.user.DeleteFinanceResponse,
+  /**
+   * @param {!proto.user.DeleteFinanceRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.user.DeleteFinanceResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.user.DeleteFinanceRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.user.DeleteFinanceResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.user.DeleteFinanceResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.user.UserServiceClient.prototype.deleteFinance =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/user.UserService/DeleteFinance',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_DeleteFinance,
+      callback);
+};
+
+
+/**
+ * @param {!proto.user.DeleteFinanceRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.user.DeleteFinanceResponse>}
+ *     Promise that resolves to the response
+ */
+proto.user.UserServicePromiseClient.prototype.deleteFinance =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/user.UserService/DeleteFinance',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_DeleteFinance);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.user.AddCategoryRequest,
+ *   !proto.user.AddCategoryResponse>}
+ */
+const methodDescriptor_UserService_AddCategory = new grpc.web.MethodDescriptor(
+  '/user.UserService/AddCategory',
+  grpc.web.MethodType.UNARY,
+  proto.user.AddCategoryRequest,
+  proto.user.AddCategoryResponse,
+  /**
+   * @param {!proto.user.AddCategoryRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.user.AddCategoryResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.user.AddCategoryRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.user.AddCategoryResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.user.AddCategoryResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.user.UserServiceClient.prototype.addCategory =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/user.UserService/AddCategory',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_AddCategory,
+      callback);
+};
+
+
+/**
+ * @param {!proto.user.AddCategoryRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.user.AddCategoryResponse>}
+ *     Promise that resolves to the response
+ */
+proto.user.UserServicePromiseClient.prototype.addCategory =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/user.UserService/AddCategory',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_AddCategory);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.user.ArchiveEventRequest,
+ *   !proto.user.ArchiveEventResponse>}
+ */
+const methodDescriptor_UserService_ArchiveEvent = new grpc.web.MethodDescriptor(
+  '/user.UserService/ArchiveEvent',
+  grpc.web.MethodType.UNARY,
+  proto.user.ArchiveEventRequest,
+  proto.user.ArchiveEventResponse,
+  /**
+   * @param {!proto.user.ArchiveEventRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.user.ArchiveEventResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.user.ArchiveEventRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.user.ArchiveEventResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.user.ArchiveEventResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.user.UserServiceClient.prototype.archiveEvent =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/user.UserService/ArchiveEvent',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_ArchiveEvent,
+      callback);
+};
+
+
+/**
+ * @param {!proto.user.ArchiveEventRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.user.ArchiveEventResponse>}
+ *     Promise that resolves to the response
+ */
+proto.user.UserServicePromiseClient.prototype.archiveEvent =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/user.UserService/ArchiveEvent',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_ArchiveEvent);
+};
+
+
 module.exports = proto.user;
 

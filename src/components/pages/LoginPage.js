@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/LoginPage.css';
 import AuthService from '../../AuthService.js';
-
 function LoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');

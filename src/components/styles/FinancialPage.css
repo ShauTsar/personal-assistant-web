@@ -1,50 +1,77 @@
 /* FinancialPage.css */
+:root {
+    --primary-color: #021a24;
+    --secondary-color: #333;
+    --accent-color: #4caf50;
+    --danger-color: #f44336;
+    --light-mode-bg: #fff;
+    --dark-mode-bg: #121212;
+    --light-mode-text: #333;
+    --dark-mode-text: #f0f0f0;
+}
+
 .financial-app {
-    background-color: rgba(76, 76, 76, 0);
-    color: #333;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.financial-app.light-mode {
+    background-color: var(--light-mode-bg);
+    color: var(--light-mode-text);
+}
+
+.financial-app.dark-mode {
+    background-color: var(--dark-mode-bg);
+    color: var(--dark-mode-text);
 }
 
 .financial-content {
     padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
 }
 
 .financial-heading {
     font-size: 2rem;
     margin-bottom: 1rem;
-}
-
-.financial-section {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+    grid-column: 1 / -1;
 }
 
 .financial-chart {
-    flex: 1;
     padding: 1rem;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    margin-right: 1rem;
-    /* Добавьте стили для вашей диаграммы */
+    transition: background-color 0.3s ease;
+}
+
+.financial-app.light-mode .financial-chart {
+    background-color: #f0f0f0;
 }
 
 .financial-transactions {
-    flex: 1;
     padding: 1rem;
-    background-color: #1b082d;
+    background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    /* Добавьте стили для отображения транзакций */
+    transition: background-color 0.3s ease;
+}
+
+.financial-app.light-mode .financial-transactions {
+    background-color: #f0f0f0;
 }
 
 .transaction-item {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .transaction-type {
@@ -54,20 +81,46 @@
 }
 
 .income {
-    background-color: #4caf50;
+    background-color: var(--accent-color);
     color: #fff;
 }
 
 .expense {
-    background-color: #f44336;
+    background-color: var(--danger-color);
     color: #fff;
 }
 
 .transaction-amount {
     margin-left: 1rem;
-    color: #fff;
 }
 
 .transaction-date {
-    color: #ffffff;
+    margin-left: 1rem;
+}
+
+/* Добавьте стили для формы ввода транзакций и других компонентов */
+.new-category-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.new-category-form input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.new-category-form button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
 }

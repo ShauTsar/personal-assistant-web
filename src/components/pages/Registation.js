@@ -18,7 +18,7 @@ const timezones = [
     { id: 'Etc/GMT-11', label: 'UTC±11 (Honiara, Vanuatu, Noumea)' },
     { id: 'Etc/GMT-12', label: 'UTC±12 (Suva, Funafuti, Tarawa)' },
 ];
-
+//TODO автологин при регистрации
 function RegistrationPage() {
     const [formData, setFormData] = useState({
         username: '',

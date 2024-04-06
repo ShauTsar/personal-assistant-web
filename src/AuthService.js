@@ -1,16 +1,18 @@
 // AuthService.js
 
-import { LoginRequest } from './proto/gen/user_pb';
+import { LoginRequest, UserSettingsRequest, UserSettings } from './proto/gen/user_pb';
 import {UserServiceClient} from "./proto/gen/user_grpc_web_pb";
+import {useState} from "react";
+
 
 const TOKEN_KEY = 'sessionToken';
 const User = 'currentUser';
+
 
 const AuthService = {
     login: async (username, password) => {
         const client = new UserServiceClient('http://localhost:8081', '', null);
         const request = new LoginRequest();
-
         request.setUsername(username);
         request.setPassword(password);
         localStorage.setItem(User, username);
@@ -45,17 +47,49 @@ const AuthService = {
         return !!localStorage.getItem(TOKEN_KEY);
     },
     getCurrentUser: async () => {
+
         const token = localStorage.getItem(TOKEN_KEY);
+        const username = localStorage.getItem(User);
 
         if (!token) {
             throw new Error('No session token found');
         }
 
         const client = new UserServiceClient('http://localhost:8081', '', null);
-        return {
-            nickname: localStorage.getItem(User),
-            avatar: '',
-        };
+        const getUserSettings = new UserSettingsRequest();
+        getUserSettings.setToken(token);
+
+        try {
+            const response = await new Promise((resolve, reject) => {
+                client.getUserSettings(getUserSettings, null, (err, res) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(res.toObject());
+                    }
+                });
+            });
+
+            const settings = response.settings;
+            const byteArray = atob(settings.avatarUrl)
+                .split('')
+                .map(char => char.charCodeAt(0));
+            const utf8String = new TextDecoder().decode(new Uint8Array(byteArray));
+            const index = utf8String.indexOf('personal-assistant-web/public/');
+            let newUrl;
+            if (index !== -1) {
+                newUrl = utf8String.substring(index + 'personal-assistant-web/public/'.length);
+            } else {
+                console.error('Substring not found');
+            }
+            return {
+                nickname: username,
+                avatar: newUrl,
+            };
+        } catch (error) {
+            console.error('Error getting user settings:', error);
+            throw error;
+        }
     },
 };
 

@@ -1,0 +1,137 @@
+.event-details-modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.event-details-modal {
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    max-width: 80%;
+    animation: zoomIn 0.3s ease;
+}
+
+.event-details-modal h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.event-details-modal p {
+    margin-bottom: 10px;
+}
+
+.event-details-modal .event-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.event-details-modal .event-actions button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.event-details-modal .event-actions button i {
+    margin-right: 5px;
+}
+
+.event-details-modal .event-actions button.complete-btn {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.event-details-modal .event-actions button.complete-btn.completed {
+    background-color: #ff5252;
+}
+
+.event-details-modal .event-actions button.complete-btn:hover {
+    background-color: #3e8e41;
+}
+
+.event-details-modal .event-actions button.archive-btn {
+    background-color: #2196f3;
+    color: #fff;
+}
+
+.event-details-modal .event-actions button.archive-btn:hover {
+    background-color: #1976d2;
+}
+
+.event-details-modal .close-btn {
+    background-color: #888;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.event-details-modal .close-btn:hover {
+    background-color: #6a6a6a;
+}
+
+/* Темная тема */
+/*.dark .event-details-modal {*/
+/*    background: #2c2c2c;*/
+/*    color: #fff;*/
+/*    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);*/
+/*}*/
+
+/*.dark .event-details-modal h2 {*/
+/*    color: #1f7985;*/
+/*}*/
+
+/*.dark .event-details-modal .close-btn,*/
+/*.dark .event-details-modal .complete-btn,*/
+/*.dark .event-details-modal .archive-btn {*/
+/*    background-color: #1f7985;*/
+/*    color: #fff;*/
+/*}*/
+
+/*.dark .event-details-modal .close-btn:hover,*/
+/*.dark .event-details-modal .complete-btn:hover,*/
+/*.dark .event-details-modal .archive-btn:hover {*/
+/*    background-color: #1b6b74;*/
+/*}*/
+
+/*.dark .event-details-modal .complete-btn.completed {*/
+/*    background-color: #ff5252;*/
+/*}*/
+
+/*.dark .event-details-modal .complete-btn.completed:hover {*/
+/*    background-color: #e53935;*/
+/*}*/
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

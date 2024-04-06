@@ -1,30 +1,196 @@
 /* styles/SettingsPage.css */
-.settings-form {
-    max-width: 400px;
-    margin: auto;
+.settings-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #3c5ef3, #240c3b);
+}
+
+.settings-form-container {
+    max-width: 500px;
+    background-color: #212529;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .settings-form label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #a19d9d;
 }
 
 .settings-form input {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.settings-form input:focus {
+    outline: none;
+    border-color: #667eea;
 }
 
 .settings-form button {
-    background-color: #007bff;
+    background-color: #667eea;
     color: #fff;
-    padding: 10px;
+    padding: 12px 20px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .settings-form button:hover {
-    background-color: #0056b3;
+    background-color: #764ba2;
 }
+
+.avatar-preview {
+    max-width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.telegram-login-container {
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+.input {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.input:hover {
+    border-color: #667eea;
+}
+
+.input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.file-input-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #667eea;
+    transition: color 0.3s ease;
+}
+
+.file-input-label:hover {
+    color: #764ba2;
+}
+
+.file-input-label svg {
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Старый стиль*/
+/*.settings-content {*/
+/*    display: flex;*/
+/*    justify-content: space-around;*/
+/*    margin-top: 40px;*/
+/*}*/
+
+/*.settings-form-container {*/
+/*    max-width: 400px;*/
+/*}*/
+
+/*.settings-form label {*/
+/*    display: block;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*.settings-form input {*/
+/*    width: 100%;*/
+/*    padding: 8px;*/
+/*    margin-top: 5px;*/
+/*    margin-bottom: 10px;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*.settings-form button {*/
+/*    background-color: #007bff;*/
+/*    color: #fff;*/
+/*    padding: 10px;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.settings-form button:hover {*/
+/*    background-color: #0056b3;*/
+/*}*/
+
+/*.avatar-preview {*/
+/*    max-width: 100%;*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*.telegram-login-container {*/
+/*    max-width: 400px;*/
+/*}*/
+/*.input{*/
+/*    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;*/
+/*    font-weight: 500;*/
+/*    font-size: .8vw;*/
+/*    color: #fff;*/
+/*    background-color: rgb(28,28,30);*/
+/*    box-shadow: 0 0 .4vw rgba(0,0,0,0.5), 0 0 0 .15vw transparent;*/
+/*    border-radius: 0.4vw;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*    padding: 0.4vw;*/
+/*    max-width: 190px;*/
+/*    transition: .4s;*/
+/*}*/
+
+/*.input:hover {*/
+/*    box-shadow: 0 0 0 .15vw rgba(135, 207, 235, 0.186);*/
+/*}*/
+
+/*.input:focus {*/
+/*    box-shadow: 0 0 0 .15vw skyblue;*/
+/*}*/
+/*.file-input-label {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    cursor: pointer;*/
+/*    color: #74C0FC;*/
+
+/*}*/
+
+/*.file-input-label:hover {*/
+/*    text-decoration: underline;*/
+/*}*/
+
+/*.avatar-preview {*/
+/*    max-width: 100px;*/
+/*    margin-top: 10px;*/
+
+/*}*/
