@@ -1,9 +1,10 @@
 import React, { useEffect, useCallback, useMemo } from 'react';
 import { UpdateTelegramUserIDRequest } from '../../proto/gen/user_pb';
 import { UserServiceClient } from '../../proto/gen/user_grpc_web_pb';
+import {GRPC_HOST} from "../../config";
 
 const Test = () => {
-    const client = useMemo(() => new UserServiceClient('http://localhost:8081', '', null), []);
+    const client = useMemo(() => new UserServiceClient(GRPC_HOST, '', null), []);
     const TOKEN_KEY = 'sessionToken';
     const token = localStorage.getItem(TOKEN_KEY);
     const registrationLink = `https://t.me/NovaPersonalAssistantBot?start=${token}`;

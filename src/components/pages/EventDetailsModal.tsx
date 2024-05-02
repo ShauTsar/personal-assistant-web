@@ -6,6 +6,7 @@ import '../styles/EventDetailsModal.css';
 import { EventDataMessage, FinishEventRequest, ArchiveEventRequest} from '../../proto/gen/user_pb.js';
 import { UserServiceClient } from '../../proto/gen/user_grpc_web_pb';
 import { useTheme } from './ThemeContext';
+import {GRPC_HOST} from "../../config.tsx";
 
 interface EventDetailsModalProps {
     event: EventDataMessage;
@@ -20,7 +21,7 @@ const EventDetailsModal: React.FC<EventDetailsModalProps> = ({ event, onClose, o
     const [isArchived, setIsArchived] = useState(false);
 
     const handleCompleteEvent = () => {
-        const client = new UserServiceClient('http://localhost:8081', '', null);
+        const client = new UserServiceClient(GRPC_HOST, '', null);
         const TOKEN_KEY = 'sessionToken';
         const token = localStorage.getItem(TOKEN_KEY);
 
@@ -41,7 +42,7 @@ const EventDetailsModal: React.FC<EventDetailsModalProps> = ({ event, onClose, o
         });
     };
     const archiveEvent = () => {
-        const client = new UserServiceClient('http://localhost:8081', '', null);
+        const client = new UserServiceClient(GRPC_HOST, '', null);
         const archiveEventRequest = new ArchiveEventRequest();
         archiveEventRequest.setTaskId(event.taskId);
 

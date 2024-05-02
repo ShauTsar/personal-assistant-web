@@ -3,6 +3,7 @@
 import { LoginRequest, UserSettingsRequest, UserSettings } from './proto/gen/user_pb';
 import {UserServiceClient} from "./proto/gen/user_grpc_web_pb";
 import {useState} from "react";
+import { GRPC_HOST } from './config.tsx';
 
 
 const TOKEN_KEY = 'sessionToken';
@@ -11,7 +12,7 @@ const User = 'currentUser';
 
 const AuthService = {
     login: async (username, password) => {
-        const client = new UserServiceClient('http://localhost:8081', '', null);
+        const client = new UserServiceClient(GRPC_HOST, '', null);
         const request = new LoginRequest();
         request.setUsername(username);
         request.setPassword(password);
@@ -55,7 +56,7 @@ const AuthService = {
             throw new Error('No session token found');
         }
 
-        const client = new UserServiceClient('http://localhost:8081', '', null);
+        const client = new UserServiceClient(GRPC_HOST, '', null);
         const getUserSettings = new UserSettingsRequest();
         getUserSettings.setToken(token);
 

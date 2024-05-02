@@ -10,6 +10,7 @@ import '../styles/EventDetailsModal.css'; // Импортируем стили �
 import { useTheme } from './ThemeContext';
 import { UserServiceClient } from '../../proto/gen/user_grpc_web_pb';
 import { AddEventDataRequest, EventDataMessage, GetAllEventsRequest } from '../../proto/gen/user_pb.js';
+import { GRPC_HOST } from '../../config.tsx';
 
 const CalendarPage: React.FC = () => {
     const [unfinishedEvents, setUnfinishedEvents] = useState<EventDataMessage[]>([]);
@@ -20,7 +21,7 @@ const CalendarPage: React.FC = () => {
     const [isDetailsModalOpen, setDetailsModalOpen] = useState(false);
 
     useEffect(() => {
-        const client = new UserServiceClient('http://localhost:8081', '', null);
+        const client = new UserServiceClient(GRPC_HOST, '', null);
         const TOKEN_KEY = 'sessionToken';
         const token = localStorage.getItem(TOKEN_KEY);
 
@@ -49,7 +50,7 @@ const CalendarPage: React.FC = () => {
     }, []);
 
     const onAddEvent = (event: EventDataMessage) => {
-        const client = new UserServiceClient('http://localhost:8081', '', null);
+        const client = new UserServiceClient(GRPC_HOST, '', null);
         const TOKEN_KEY = 'sessionToken';
         const token = localStorage.getItem(TOKEN_KEY);
         const currentDate = new Date();

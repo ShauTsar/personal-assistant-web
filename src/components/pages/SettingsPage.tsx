@@ -7,6 +7,7 @@ import { useTheme } from './ThemeContext';
 import TelegramLogin from './TelegramLogin.tsx';
 import { UserServiceClient } from '../../proto/gen/user_grpc_web_pb';
 import {GetAllEventsRequest, UpdateUserSettingsRequest, UserSettings, UserSettingsRequest} from "../../proto/gen/user_pb";
+import { GRPC_HOST } from '../../config.tsx';
 
 function SettingsPage() {
     const { darkMode } = useTheme();
@@ -30,7 +31,7 @@ function SettingsPage() {
     };
     const [settings, setSettings] = useState(initialSettings);
     useEffect(() => {
-        const client = new UserServiceClient('http://localhost:8081', '', null);
+        const client = new UserServiceClient(GRPC_HOST, '', null);
         const TOKEN_KEY = 'sessionToken';
         const token = localStorage.getItem(TOKEN_KEY);
 
@@ -79,7 +80,7 @@ function SettingsPage() {
         });
     }, []);
     const updateSettings = async () => {
-        const client = new UserServiceClient('http://localhost:8081', '', null);
+        const client = new UserServiceClient(GRPC_HOST, '', null);
         const TOKEN_KEY = 'sessionToken';
         const token = localStorage.getItem(TOKEN_KEY);
         const timezone = settings.timezone;

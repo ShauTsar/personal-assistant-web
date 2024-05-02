@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/LoginPage.css';
 import { RegisterRequest } from '../../proto/gen/user_pb.js';
 import { UserServiceClient } from '../../proto/gen/user_grpc_web_pb.js';
+import {GRPC_HOST} from "../../config.tsx";
 const timezones = [
     { id: 'Etc/UTC', label: 'UTC±0 (London, Dublin, Lisbon)' },
     { id: 'Etc/GMT-1', label: 'UTC±1 (Berlin, Paris, Rome)' },
@@ -52,7 +53,7 @@ function RegistrationPage() {
     };
 
     const handleRegister = () => {
-        const client = new UserServiceClient('http://localhost:8081', '', null);
+        const client = new UserServiceClient(GRPC_HOST, '', null);
 
         const request = new RegisterRequest();
         request.setUsername(formData.username);

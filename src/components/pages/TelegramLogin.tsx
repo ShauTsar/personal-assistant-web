@@ -1,6 +1,7 @@
 import React, {useCallback, useEffect, useRef} from 'react';
 import { UpdateTelegramUserIDRequest } from '../../proto/gen/user_pb.js';
 import { UserServiceClient } from '../../proto/gen/user_grpc_web_pb';
+import {GRPC_HOST} from "../../config.tsx";
 
 interface User {
     id: number;
@@ -21,7 +22,7 @@ const TelegramLogin: React.FC = () => {
         // Определение функции onTelegramAuth в глобальном объекте window
         window.onTelegramAuth = async (user: any) => {
             console.log('Telegram authentication successful. User:', user.id);
-            const client = new UserServiceClient('http://localhost:8081', '', null);
+            const client = new UserServiceClient(GRPC_HOST, '', null);
             const request = new UpdateTelegramUserIDRequest();
             request.setToken(token);
             request.setUsertelegramid(user.id)

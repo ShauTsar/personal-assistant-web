@@ -7,6 +7,7 @@ import ExpenseChart from './ExpenseChart.tsx';
 import '../styles/FinancialPage.css';
 import { UserServiceClient } from '../../proto/gen/user_grpc_web_pb';
 import { AddCategoryRequest, AddCategoryResponse, Category, GetCategoriesRequest, GetCategoriesResponse, GetFinancesRequest, GetFinancesResponse, AddFinanceRequest, AddFinanceResponse, Finances } from '../../proto/gen/user_pb.js';
+import {GRPC_HOST} from "../../config.tsx";
 
 function FinancialPage() {
     const TOKEN_KEY = 'sessionToken';
@@ -22,7 +23,7 @@ function FinancialPage() {
     }, []);
 
     const fetchCategories = async () => {
-        const client = new UserServiceClient('http://localhost:8081', null, null);
+        const client = new UserServiceClient(GRPC_HOST, '', null);
         const request = new GetCategoriesRequest;
         request.setToken(token);
         client.getCategories(request, null, (err, response) => {
@@ -38,7 +39,7 @@ function FinancialPage() {
     };
 
     const fetchTransactions = async () => {
-        const client = new UserServiceClient('http://localhost:8081', null, null);
+        const client = new UserServiceClient(GRPC_HOST, '', null);
         const request = new GetFinancesRequest();
         request.setToken(token);
         client.getFinances(request, null, (err, response) => {
@@ -53,7 +54,7 @@ function FinancialPage() {
     };
 
     const addTransaction = (transaction: Finances.AsObject) => {
-        const client = new UserServiceClient('http://localhost:8081', null, null);
+        const client = new UserServiceClient(GRPC_HOST, '', null);
         const request = new AddFinanceRequest();
         const financeData = new Finances();
         const categoryData = new Category();
@@ -82,7 +83,7 @@ function FinancialPage() {
     };
 
     const addCategory = async () => {
-        const client = new UserServiceClient('http://localhost:8081', null, null);
+        const client = new UserServiceClient(GRPC_HOST, '', null);
         const request = new AddCategoryRequest();
         const category = new Category();
         category.setName(newCategoryName);
